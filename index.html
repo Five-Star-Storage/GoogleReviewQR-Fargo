@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="en">
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Five Star Storage — Google Review Links</title>
+
+      <style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Green Container */
+.state-container{
+    width:100%;
+    background:#166E39;
+    padding:20px;
+}
+
+/* Button Layout */
+.state-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+/* Buttons */
+.state-btn{
+    background:#ffffff;
+    color:#166E39;
+    border:none;
+    padding:12px 24px;
+    border-radius:6px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.state-btn:hover{
+    background:#dff2e5;
+}
+
+.state-btn.active{
+    background:#0e522a;
+    color:#fff;
+}
+
+/* Content Area */
+.content{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+/* Individual Cards */
+.state-item{
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:20px;
+    margin-bottom:20px;
+    background:#fff;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.state-buttons{
+    flex-direction:column;
+}
+
+.state-btn{
+    width:100%;
+}
+
+}
+
+    :root{
+      --brand-green: #166E39;
+      --brand-black: #000000;
+      --brand-muted: #F4F4F4;
+      --max-width: 980px;
+      --gap: 12px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      background: #ffffff;
+      color:var(--brand-black);
+          
+      display:flex;
+      flex-direction:column;    /* Stack vertically */
+      align-items:center;       /* Center horizontally*/
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      background: var(--brand-muted);
+      border-radius:10px;
+      padding:18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    header{
+      display:flex;
+      gap:var(--gap);
+      align-items:center;
+      margin-bottom:12px;
+    }
+
+    .logo{
+      max-width:100%;
+      width:180px;
+      height: auto;
+    }
+
+    .title-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    h1{
+      margin:0;
+      font-size:1.2rem;
+      color:var(--brand-black);
+      letter-spacing:0.2px;
+    }
+
+    p.subtitle{
+      margin:0;
+      color:#333;
+      font-size:0.92rem;
+    }
+
+    .list-wrap{
+      margin-top:14px;
+    }
+
+    ul.address-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+
+    li.item{
+      background: #ffffff;
+      border-radius:8px;
+      padding:12px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .left{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      min-width:0;
+    }
+
+    .code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+      background:var(--brand-green);
+      color:#fff;
+      padding:6px 10px;
+      border-radius:6px;
+      font-weight:700;
+      font-size:0.86rem;
+      flex-shrink:0;
+      line-height:1;
+    }
+
+    .addr{
+      font-weight:600;
+      color:var(--brand-black);
+      font-size:0.98rem;
+      word-break:break-word;
+      display:block;
+    }
+
+    .addr small{ font-weight:400; color:#555; display:block; margin-top:4px; font-size:0.86rem; }
+
+    .actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-shrink:0;
+      margin-left:8px;
+    }
+
+    a.btn{
+      display:inline-block;
+      padding:8px 12px;
+      background:var(--brand-green);
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:700;
+      font-size:0.95rem;
+      border:2px solid rgba(0,0,0,0);
+      transition:transform .06s ease, box-shadow .06s ease;
+    }
+
+    a.btn:active{ transform:translateY(1px); }
+    a.btn.secondary{
+      background:transparent;
+      color:var(--brand-black);
+      border:2px solid rgba(0,0,0,0.06);
+      font-weight:600;
+    }
+
+    .note{
+      margin-top:12px;
+      color:#444;
+      font-size:0.9rem;
+    }
+
+    /* Responsive / mobile friendly */
+    @media (max-width:720px){
+      .logo{height:48px}
+      header{align-items:center}
+      li.item{flex-direction:column; align-items:stretch; gap:10px}
+      .actions{justify-content:flex-end}
+      .code{height:auto; padding:6px 8px; font-size:0.88rem}
+      a.btn{width:100%; text-align:center}
+    }
+  .status {
+  margin-top: 12px;
+  text-align: center;
+  color: #ffffff; /* white text */
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+</style>
+</head>
+<body>
+      <header>
+            <!-- Save the attached logo image as "five-star-logo.png" next to this HTML file -->
+            <img src="five-star-logo.png" alt="Five Star Storage logo" class="logo">
+
+            <div class="title-wrap"> 
+                  <h1>Five Star Storage — Google Review Links</h1>
+                  <p class="subtitle">Tap "Write a review" to open the review dialog for that location.</p>
+            </div>
+      </header>
+            
+      <div class="container" role="main">
+    
+<div class="state-container">
+
+    <div class="state-buttons">
+
+        <button class="state-btn active" data-filter="all">All States</button>
+
+        <button data-filter="Minnesota" class="state-btn">Minnesota</button>
+
+        <button class="state-btn" data-filter="Montana">Montana</button>
+
+        <button class="state-btn" data-filter="Nebraska">Nebraska</button>
+
+        <button class="state-btn" data-filter="North Dakota">North Dakota</button>
+
+        <button class="state-btn" data-filter="South Dakota">South Dakota</button>
+
+        <button class="state-btn" data-filter="Wisconsin">Wisconsin</button>
+
+    </div>
+  <div aria-live="polite" id="statusText" class="status">Showing all locations (45)</div>
+</div>
+
+  <div class="list-wrap">
+      <ul class="address-list" id="addressList">
+        <!-- Automatically generated entries -->
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L001</div>
+            <div>
+              <div class="addr">Five Star Storage - 240 45th St NE, West Fargo, North Dakota 58078</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CbQVMB0Eh70aEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L002</div>
+            <div>
+              <div class="addr">Five Star Storage - 1402 27th Ave S, Fargo, North Dakota 58103</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CaPxV12kRZcaEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L003</div>
+            <div>
+              <div class="addr">Five Star Storage - 487 34th St S, Fargo, North Dakota 58103</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CWDIH97V4P2iEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L004</div>
+            <div>
+              <div class="addr">Five Star Storage - 3241 32nd St S, Fargo, North Dakota 58104</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CW0tqlLp_LGvEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L005</div>
+            <div>
+              <div class="addr">Five Star Storage - 2111 Main Ave E, West Fargo, North Dakota 58078</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CbhObqOsVfEoEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L006</div>
+            <div>
+              <div class="addr">Five Star Storage - 3255 43rd St S, Fargo, North Dakota 58104</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CdyrLasLiKKOEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L007</div>
+            <div>
+              <div class="addr">Five Star Storage - 430 29th St W, Dickinson, North Dakota 58601</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CXo8fq2wr7NkEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L008</div>
+            <div>
+              <div class="addr">Five Star Storage - 3320 Hamilton St, Ste #6, Bismarck, North Dakota 58503</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CSetOkjWkz0ZEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L009</div>
+            <div>
+              <div class="addr">Five Star Storage - 5118 Gateway Dr, Grand Forks, North Dakota 58203</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CVeJYPH0Au2EEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L010</div>
+            <div>
+              <div class="addr">Five Star Storage - 5710 Quam Ave NE, St Michael, Minnesota 55376</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CYQuRrE_ZR5sEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L011</div>
+            <div>
+              <div class="addr">Five Star Storage - 14450 James Rd, Rogers, Minnesota 55374</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/Cfyuztoy7IQbEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L012</div>
+            <div>
+              <div class="addr">Five Star Storage - 1400 Selby Ave, St Paul, Minnesota 55104</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CVDFRL8B-VTKEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L013</div>
+            <div>
+              <div class="addr">Five Star Storage - 2300 47th Ave S, Grand Forks, North Dakota 58201</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CYP9dDpgd19aEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L014</div>
+            <div>
+              <div class="addr">Five Star Storage - 3955 40th Ave S, Fargo, North Dakota 58104</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CXHsVsRS_ZHsEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L015</div>
+            <div>
+              <div class="addr">Five Star Storage - 1822 6th Ave W, Dickinson, North Dakota 58601</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CRcRg2YgPkJfEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L016</div>
+            <div>
+              <div class="addr">Five Star Storage - 2537 6th St E, Dickinson, North Dakota 58601</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CQSckEZN_C0BEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L017</div>
+            <div>
+              <div class="addr">Five Star Storage - 4613 Centurion Dr, Bismarck, North Dakota 58503</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CfrUZd3ZcfhEEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L018</div>
+            <div>
+              <div class="addr">Five Star Storage - 402 25th St N, Fargo, North Dakota 58102</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CdB_dBaDqw_IEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L019</div>
+            <div>
+              <div class="addr">Five Star Storage - 3825 34th Ave S, Fargo, North Dakota 58104 ???????</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CQIPJYCdHXpxEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L020</div>
+            <div>
+              <div class="addr">Five Star Storage - 2100 Main Ave E, West Fargo, North Dakota 58078</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CVliK1O8C5_vEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L021</div>
+            <div>
+              <div class="addr">Five Star Storage - 1509 11th St N, Moorhead, Minnesota 56560</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CTUHD-BYE-5_EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L022</div>
+            <div>
+              <div class="addr">Five Star Storage - 2001 15th Ave N, Moorhead, Minnesota 56560</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/Cc_dvC2WND37EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L023</div>
+            <div>
+              <div class="addr">Five Star Storage - 4771 W Arrowhead Rd, Hermantown, Minnesota 55811</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CYy0H63vYShzEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L024</div>
+            <div>
+              <div class="addr">Five Star Storage - 4370 Airbase Rd, Hermantown, Minnesota 55811</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CTViBoaE59wkEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="South Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L025</div>
+            <div>
+              <div class="addr">Five Star Storage - 6001 S Sundowner Ave, Sioux Falls, South Dakota 57106</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CUJdc2nWlmlkEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="South Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L026</div>
+            <div>
+              <div class="addr">Five Star Storage - 27058 Katie Rd, Tea, South Dakota 57064</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CSpBc1EzvQiHEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="South Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L027</div>
+            <div>
+              <div class="addr">Five Star Storage - 27080 Thomas Ave, Tea, South Dakota 57064</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CTTnvO7gqc4jEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L028</div>
+            <div>
+              <div class="addr">Five Star Storage - 3070 39th St S, Fargo, North Dakota 58104</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CQ2gdpTRRxd1EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="South Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L029</div>
+            <div>
+              <div class="addr">Five Star Storage - 2111 N Louise Circle, Sioux Falls, South Dakota 57107</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CbNdyF4qlpZ3EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L030</div>
+            <div>
+              <div class="addr">Five Star Storage - 4414 Haines Rd, Duluth, Minnesota 55811</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CZxPULVmfzA5EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L031</div>
+            <div>
+              <div class="addr">Five Star Storage - 5805 Bandel Rd NW, Rochester, Minnesota 55901</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CTTj-DAl20DYEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L032</div>
+            <div>
+              <div class="addr">Five Star Storage - 950 Pendant Lane NW, Rochester, Minnesota 55901</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/Cb6wIpRM38KBEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L033</div>
+            <div>
+              <div class="addr">Five Star Storage - 3000 S 38th St, Grand Forks, North Dakota 58201</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/Cch6JFjxFy-9EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Montana" style="display: flex;">
+          <div class="left">
+            <div class="code">L034</div>
+            <div>
+              <div class="addr">Five Star Storage - 3209 Grand Ave, Billings, Montana 59102</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CRpODNxP9EhyEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L035</div>
+            <div>
+              <div class="addr">Five Star Storage - 1500 Marshall Ave, St Paul, Minnesota 55104</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CYit84-XjJRzEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Montana" style="display: flex;">
+          <div class="left">
+            <div class="code">L036</div>
+            <div>
+              <div class="addr">Five Star Storage - 1250 14th St W, Billings, Montana 59102</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CU5Fv4CGFeNkEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Wisconsin" style="display: flex;">
+          <div class="left">
+            <div class="code">L037</div>
+            <div>
+              <div class="addr">Five Star Storage - 1700 Madison Ave, New Richmond, Wisconsin 54017</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CZmQSgWAY2h-EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L038</div>
+            <div>
+              <div class="addr">Five Star Storage - 2231 3rd St SE, Mandan, North Dakota 58554</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CaGVmoA4b_eEEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="South Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L039</div>
+            <div>
+              <div class="addr">Five Star Storage - 3612 W Teem Dr, Sioux Falls, South Dakota 57107</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CSylXusfkOQNEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L040</div>
+            <div>
+              <div class="addr">Five Star Storage - 9350 Maple Grove Pkwy #2, Maple Grove, Minnesota 55311</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CVFCe9pY9hepEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+          <div class="left">
+            <div class="code">L041</div>
+            <div>
+              <div class="addr">Five Star Storage - 5358 Quam Ave NE, St Michael, Minnesota 55376</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CbaYdShBcESyEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="South Dakota" style="display: flex;">
+          <div class="left">
+            <div class="code">L042</div>
+            <div>
+              <div class="addr">Five Star Storage - 3800 S Grange Ave, Sioux Falls, South Dakota 57105</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CX630mKMvYHdEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Nebraska" style="display: flex;">
+          <div class="left">
+            <div class="code">L043</div>
+            <div>
+              <div class="addr">Five Star Storage - 802 Cary Street, Bellevue, Nebraska 68147</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CdmgF6s8-kE7EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Nebraska" style="display: flex;">
+          <div class="left">
+            <div class="code">L044</div>
+            <div>
+              <div class="addr">Five Star Storage - 1801 Pioneers Blvd, Lincoln, Nebraska 68502</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/CZMUjYGKSYGmEAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+        <li class="item state-item" data-state="Nebraska" style="display: flex;">
+          <div class="left">
+            <div class="code">L045</div>
+            <div>
+              <div class="addr">Five Star Storage - 5350 Cornhusker Hwy, Lincoln, Nebraska 68504</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://g.page/r/Cf5Jhw5F7Yn9EAE/review" target="_blank" rel="noopener">Write a review</a>
+          </div>
+        </li>
+
+      </ul>
+    </div></div>
+
+
+<script>
+const buttons = document.querySelectorAll(".state-btn");
+const items = document.querySelectorAll(".state-item");
+const statusText = document.getElementById('statusText');
+
+function updateUI(filter) {
+  let visibleCount = 0;
+
+  items.forEach(item => {
+    const isVisible = (filter === 'all' || item.dataset.state === filter);
+    item.style.display = isVisible ? 'flex' : 'none';
+    if (isVisible) visibleCount++;
+  });
+
+  const label = filter === 'all'
+    ? `Showing all locations (${visibleCount})`
+    : `Showing ${visibleCount} location${visibleCount === 1 ? '' : 's'} in ${filter}`;
+  
+  if (statusText) statusText.textContent = label;
+}
+
+buttons.forEach(button => {
+  button.addEventListener('click', function () {
+    buttons.forEach(btn => btn.classList.remove('active'));
+    this.classList.add('active');
+    updateUI(this.dataset.filter);
+  });
+});
+
+// Initial call
+const activeBtn = document.querySelector('.state-btn.active');
+updateUI(activeBtn ? activeBtn.dataset.filter : 'all');
+</script></body></html>
