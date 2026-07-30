@@ -14,14 +14,14 @@
 }
 
 /* Green Container */
-.state-container{
+.city-container{
     width:100%;
     background:#166E39;
     padding:20px;
 }
 
 /* Button Layout */
-.state-buttons{
+.city-buttons{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -29,7 +29,7 @@
 }
 
 /* Buttons */
-.state-btn{
+.city-btn{
     background:#ffffff;
     color:#166E39;
     border:none;
@@ -41,11 +41,11 @@
     transition:.25s;
 }
 
-.state-btn:hover{
+.city-btn:hover{
     background:#dff2e5;
 }
 
-.state-btn.active{
+.city-btn.active{
     background:#0e522a;
     color:#fff;
 }
@@ -58,7 +58,7 @@
 }
 
 /* Individual Cards */
-.state-item{
+.city-item{
     border:1px solid #ddd;
     border-radius:8px;
     padding:20px;
@@ -69,11 +69,11 @@
 /* Mobile */
 @media(max-width:768px){
 
-.state-buttons{
+.city-buttons{
     flex-direction:column;
 }
 
-.state-btn{
+.city-btn{
     width:100%;
 }
 
@@ -259,24 +259,27 @@
             
       <div class="container" role="main">
     
-<div class="state-container">
+<div class="city-container">
 
-    <div class="state-buttons">
+    <div class="city-buttons">
 
-        <button class="state-btn active" data-filter="all">All States</button>
+        <button class="city-btn active" data-filter="all">All Cities</button>
 
-        <button data-filter="Minnesota" class="state-btn">Minnesota</button>
+        <button class="city-btn" data-filter="Fargo">Fargo</button>
 
-        <button class="state-btn" data-filter="North Dakota">North Dakota</button>
+        <button class="city-btn" data-filter="West Fargo">West Fargo</button>
+      
+        <button class="city-btn" data-filter="Moorhead">Moorhead</button>
 
     </div>
+      
   <div aria-live="polite" id="statusText" class="status">Showing all locations (13)</div>
 </div>
 
   <div class="list-wrap">
       <ul class="address-list" id="addressList">
         <!-- Automatically generated entries -->
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="West Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L001</div>
             <div>
@@ -288,7 +291,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L002</div>
             <div>
@@ -300,7 +303,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L003</div>
             <div>
@@ -312,7 +315,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L004</div>
             <div>
@@ -324,7 +327,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="West Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L005</div>
             <div>
@@ -336,7 +339,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L006</div>
             <div>
@@ -348,7 +351,7 @@
           </div>
         </li>
             
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L014</div>
             <div>
@@ -360,7 +363,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L018</div>
             <div>
@@ -372,7 +375,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L019</div>
             <div>
@@ -384,7 +387,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="West Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L020</div>
             <div>
@@ -396,7 +399,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="Minnesota" style="display: flex;">
+        <li class="item city-item" data-city="Moorhad" style="display: flex;">
           <div class="left">
             <div class="code">L021</div>
             <div>
@@ -408,7 +411,7 @@
           </div>
         </li>
 
-              <li class="item state-item" data-state="Minnesota" style="display: flex;">
+              <li class="item city-item" data-city="Moorhad" style="display: flex;">
           <div class="left">
             <div class="code">L022</div>
             <div>
@@ -420,7 +423,7 @@
           </div>
         </li>
 
-        <li class="item state-item" data-state="North Dakota" style="display: flex;">
+        <li class="item city-item" data-city="Fargo" style="display: flex;">
           <div class="left">
             <div class="code">L028</div>
             <div>
@@ -437,15 +440,15 @@
 
 
 <script>
-const buttons = document.querySelectorAll(".state-btn");
-const items = document.querySelectorAll(".state-item");
+const buttons = document.querySelectorAll(".city-btn");
+const items = document.querySelectorAll(".city-item");
 const statusText = document.getElementById('statusText');
 
 function updateUI(filter) {
   let visibleCount = 0;
 
   items.forEach(item => {
-    const isVisible = (filter === 'all' || item.dataset.state === filter);
+    const isVisible = (filter === 'all' || item.dataset.city === filter);
     item.style.display = isVisible ? 'flex' : 'none';
     if (isVisible) visibleCount++;
   });
@@ -466,6 +469,6 @@ buttons.forEach(button => {
 });
 
 // Initial call
-const activeBtn = document.querySelector('.state-btn.active');
+const activeBtn = document.querySelector('.city-btn.active');
 updateUI(activeBtn ? activeBtn.dataset.filter : 'all');
 </script></body></html>
